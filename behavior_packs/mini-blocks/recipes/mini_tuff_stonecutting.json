@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_tuff_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:tuff"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:tuff"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_tuff_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_blue_concrete_attachable_from_block"
+    },
+    "ingredients": [
+      {
+        "item": "miniblocks:mini_blue_concrete_block"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "miniblocks:mini_blue_concrete_block"
+      }
+    ],
+    "result": {
+      "count": 1,
+      "item": "miniblocks:mini_blue_concrete"
+    },
+    "tags": ["crafting_table"]
+  }
+}

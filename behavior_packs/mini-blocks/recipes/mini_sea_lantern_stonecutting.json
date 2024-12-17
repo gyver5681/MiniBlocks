@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_sea_lantern_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:sea_lantern"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:sea_lantern"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_sea_lantern_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

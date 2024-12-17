@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_raw_iron_block_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:raw_iron_block"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:raw_iron_block"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_raw_iron_block_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

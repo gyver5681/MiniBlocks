@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_bee_nest_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:bee_nest"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:bee_nest"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_bee_nest_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

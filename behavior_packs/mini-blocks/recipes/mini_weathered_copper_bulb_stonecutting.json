@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_weathered_copper_bulb_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:weathered_copper_bulb"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:weathered_copper_bulb"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_weathered_copper_bulb_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

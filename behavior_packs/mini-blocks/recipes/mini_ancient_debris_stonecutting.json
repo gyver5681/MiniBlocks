@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_ancient_debris_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:ancient_debris"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:ancient_debris"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_ancient_debris_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_unlit_redstone_lamp_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:redstone_lamp"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:redstone_lamp"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_unlit_redstone_lamp_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

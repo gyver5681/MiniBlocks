@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_exposed_cut_copper_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:exposed_cut_copper"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:exposed_cut_copper"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_exposed_cut_copper_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

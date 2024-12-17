@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_obsidian_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:obsidian"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:obsidian"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_obsidian_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

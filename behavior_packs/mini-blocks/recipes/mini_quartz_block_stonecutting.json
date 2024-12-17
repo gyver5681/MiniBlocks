@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_quartz_block_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:quartz_block"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:quartz_block"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_quartz_block_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

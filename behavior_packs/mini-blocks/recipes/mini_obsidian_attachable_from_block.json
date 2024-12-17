@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_obsidian_attachable_from_block"
+    },
+    "ingredients": [
+      {
+        "item": "miniblocks:mini_obsidian_block"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "miniblocks:mini_obsidian_block"
+      }
+    ],
+    "result": {
+      "count": 1,
+      "item": "miniblocks:mini_obsidian"
+    },
+    "tags": ["crafting_table"]
+  }
+}

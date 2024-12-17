@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_ender_chest_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:ender_chest"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:ender_chest"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_ender_chest_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

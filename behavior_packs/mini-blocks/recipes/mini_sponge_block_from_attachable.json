@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_sponge_block_from_attachable"
+    },
+    "ingredients": [
+      {
+        "item": "miniblocks:mini_sponge"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "miniblocks:mini_sponge"
+      }
+    ],
+    "result": {
+      "count": 1,
+      "item": "miniblocks:mini_sponge_block"
+    },
+    "tags": ["crafting_table"]
+  }
+}

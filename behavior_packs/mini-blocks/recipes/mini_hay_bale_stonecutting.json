@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_hay_bale_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:hay_block"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:hay_block"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_hay_bale_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

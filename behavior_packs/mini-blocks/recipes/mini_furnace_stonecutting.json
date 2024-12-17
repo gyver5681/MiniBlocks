@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_furnace_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:furnace"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:furnace"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_furnace_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

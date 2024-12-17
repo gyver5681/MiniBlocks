@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_prismarine_block_from_attachable"
+    },
+    "ingredients": [
+      {
+        "item": "miniblocks:mini_prismarine"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "miniblocks:mini_prismarine"
+      }
+    ],
+    "result": {
+      "count": 1,
+      "item": "miniblocks:mini_prismarine_block"
+    },
+    "tags": ["crafting_table"]
+  }
+}

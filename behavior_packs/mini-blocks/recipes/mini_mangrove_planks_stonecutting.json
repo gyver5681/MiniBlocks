@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_mangrove_planks_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:mangrove_planks"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:mangrove_planks"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_mangrove_planks_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

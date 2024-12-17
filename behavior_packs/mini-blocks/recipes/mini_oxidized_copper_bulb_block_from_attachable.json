@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_oxidized_copper_bulb_block_from_attachable"
+    },
+    "ingredients": [
+      {
+        "item": "miniblocks:mini_oxidized_copper_bulb"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "miniblocks:mini_oxidized_copper_bulb"
+      }
+    ],
+    "result": {
+      "count": 1,
+      "item": "miniblocks:mini_oxidized_copper_bulb_block"
+    },
+    "tags": ["crafting_table"]
+  }
+}

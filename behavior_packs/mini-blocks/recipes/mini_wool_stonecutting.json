@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_wool_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:white_wool"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:white_wool"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_wool_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

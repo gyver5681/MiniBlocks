@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_glowstone_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:glowstone"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:glowstone"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_glowstone_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

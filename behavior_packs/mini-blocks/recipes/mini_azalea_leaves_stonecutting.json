@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_azalea_leaves_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:azalea_leaves"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:azalea_leaves"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_azalea_leaves_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

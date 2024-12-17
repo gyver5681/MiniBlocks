@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_exposed_copper_bulb_lit_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:exposed_copper_bulb"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:exposed_copper_bulb"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_exposed_copper_bulb_lit_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

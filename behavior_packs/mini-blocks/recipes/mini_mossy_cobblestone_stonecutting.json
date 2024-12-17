@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_mossy_cobblestone_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:mossy_cobblestone"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:mossy_cobblestone"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_mossy_cobblestone_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

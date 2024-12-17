@@ -1,0 +1,24 @@
+{
+  "format_version": "FMT_VER",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:ITEM_NAME_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "INGREDIENT"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "INGREDIENT"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:ITEM_NAME_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

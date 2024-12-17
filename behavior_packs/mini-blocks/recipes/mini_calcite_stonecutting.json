@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_calcite_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:calcite"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:calcite"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_calcite_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

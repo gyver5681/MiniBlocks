@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_terracotta_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:hardened_clay"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:hardened_clay"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_terracotta_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

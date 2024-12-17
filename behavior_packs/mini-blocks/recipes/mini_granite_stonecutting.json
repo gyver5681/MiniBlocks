@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_granite_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:granite"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:granite"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_granite_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

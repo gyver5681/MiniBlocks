@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_tnt_block_from_attachable"
+    },
+    "ingredients": [
+      {
+        "item": "miniblocks:mini_tnt"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "miniblocks:mini_tnt"
+      }
+    ],
+    "result": {
+      "count": 1,
+      "item": "miniblocks:mini_tnt_block"
+    },
+    "tags": ["crafting_table"]
+  }
+}

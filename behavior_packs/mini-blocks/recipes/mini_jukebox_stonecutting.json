@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_jukebox_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:jukebox"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:jukebox"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_jukebox_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

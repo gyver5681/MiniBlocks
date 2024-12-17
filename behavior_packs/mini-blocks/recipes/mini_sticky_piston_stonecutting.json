@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_sticky_piston_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:sticky_piston"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:sticky_piston"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_sticky_piston_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

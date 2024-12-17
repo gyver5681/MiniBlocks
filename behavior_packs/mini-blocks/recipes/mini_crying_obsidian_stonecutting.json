@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_crying_obsidian_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:crying_obsidian"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:crying_obsidian"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_crying_obsidian_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

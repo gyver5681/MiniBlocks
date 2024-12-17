@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "miniblocks:mini_piston_stonecutting"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:piston"
+      }
+    ],
+    "priority": 0,
+    "unlock": [
+      {
+        "item": "minecraft:piston"
+      }
+    ],
+    "result": {
+      "count": 8,
+      "item": "miniblocks:mini_piston_block"
+    },
+    "tags": ["stonecutter"]
+  }
+}

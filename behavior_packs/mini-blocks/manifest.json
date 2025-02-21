@@ -1,25 +1,25 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Mini Blocks v1.0.0 BP",
-    "description": "Mini Blocks Behavior Pack v1.0.0",
+    "name": "Mini Blocks v1.0.1 BP",
+    "description": "Mini Blocks Behavior Pack v1.0.1",
     "uuid": "3ce056f3-9a83-4609-8c7a-f19f529d7379",
-    "version": [1, 0, 0],
-    "min_engine_version": [1, 20, 50]
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 60]
   },
   "modules": [
     {
       "description": "Behavior",
-      "version": [1, 0, 0],
+      "version": [1, 0, 1],
       "uuid": "f9a79171-cc1e-4743-b3fd-82cfee58b76d",
       "type": "data"
     },
     {
-      "description": "Mini Blovkd Script resources",
+      "description": "Mini Blocks Script resources",
       "language": "javascript",
       "type": "script",
       "uuid": "8e7c0db6-f3df-4237-b090-947d5e0725a8",
-      "version": [1, 0, 0],
+      "version": [1, 0, 1],
       "entry": "scripts/main.js"
     }
   ],
@@ -30,7 +30,7 @@
     },
     {
       "uuid": "dcaae44f-a8a1-4c02-8f32-496bea61a8d1",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ]
 }

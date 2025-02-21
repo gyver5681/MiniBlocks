@@ -1,24 +1,24 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Mini Blocks v1.0.0 RP",
-    "description": "Mini Blocks Resource Pack v1.0.0",
+    "name": "Mini Blocks v1.0.1 RP",
+    "description": "Mini Blocks Resource Pack v1.0.1",
     "uuid": "dcaae44f-a8a1-4c02-8f32-496bea61a8d1",
-    "version": [1, 0, 0],
-    "min_engine_version": [1, 21, 50]
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 60]
   },
   "modules": [
     {
       "description": "Mini Blocks",
       "type": "resources",
       "uuid": "7a53709a-1f3c-4d28-ade0-8e977784e13e",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ],
   "dependencies": [
     {
       "uuid": "3ce056f3-9a83-4609-8c7a-f19f529d7379",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ]
 }

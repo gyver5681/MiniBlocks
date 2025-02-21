@@ -1,3 +1,4 @@
+Add-Type -AssemblyName System.Drawing
 
 # Path to the entity loot table folder from Vanilla Tweaks' Mini Blocks mod download.
 # Changes to original folder
@@ -20,7 +21,7 @@ $OutputItemLangFile = "$($OutputProjectRoot)\tempItemLang.txt"
 $OutputTileLangFile = "$($OutputProjectRoot)\tempTileLang.txt"
 
 $OutputBPFolder = "$($OutputProjectRoot)\behavior_packs\mini-blocks"
-$OutputRPFolder = "$($OutputProjectRoot)\\resource_packs\mini-blocks"
+$OutputRPFolder = "$($OutputProjectRoot)\resource_packs\mini-blocks"
 
 # Output Behavior Pack Folders
 $OutputBpBlocksFolder = "$($OutputBPFolder)\blocks"
@@ -29,6 +30,7 @@ $OutputBpBlocksLootTableFolder = "$($OutputBPFolder)\loot_tables\blocks"
 $OutputBpRecipesFolder = "$($OutputBPFolder)\recipes"
 
 # Output Resource Pack Folders
+$OutputRpBaseTexturesFolder = "$($OutputRPFolder)\textures\base"
 $OutputRpAttachablesFolder = "$($OutputRPFolder)\attachables"
 $OutputRpBlockTexturesFolder = "$($OutputRPFolder)\textures\blocks"
 $OutputRpAttachableTexturesFolder = "$($OutputRPFolder)\textures\entity\attachable"
@@ -53,13 +55,70 @@ $BlocksJsonHeader = "{`n  ""format_version"": ""$($FormatVersionBlocks)"","
 
 $TerrainTexturesHeader = "{`n  ""resource_pack_name"": ""vanilla"",`n  ""texture_name"": ""atlas.terrain"",`n  ""padding"": 8,`n  ""num_mip_levels"": 4,`n  ""texture_data"": {"
 
+$BlockIdDisparity = @{
+  'minecraft:bricks'                  = 'minecraft:brick_block'
+  'minecraft:end_stone_bricks'        = 'minecraft:end_bricks'
+  'minecraft:flowering_azalea_leaves' = 'minecraft:flowering_azalea'
+  'minecraft:magma_block'             = 'minecraft:magma'
+  'minecraft:nether_bricks'           = 'minecraft:nether_brick'
+  'minecraft:nether_quartz_ore'       = 'minecraft:quartz_ore'
+  'minecraft:red_nether_bricks'       = 'minecraft:red_nether_brick'
+  'minecraft:slime_block'             = 'minecraft:slime'
+  'minecraft:snow_block'              = 'minecraft:snow'
+  'minecraft:terracotta'              = 'minecraft:hardened_clay'
+}
+
+function CleanTexture {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$InputPath,
+
+    [Parameter(Mandatory = $false)]
+    [string]$OutputPath = $InputPath
+  )
+
+  try {
+    $image = [System.Drawing.Image]::FromFile($InputPath)
+
+    # Create a new bitmap with the desired dimensions.
+    $croppedImage = New-Object System.Drawing.Bitmap 32, 16
+
+    # Create a graphics object to draw the cropped portion onto the new bitmap.
+    $graphics = [System.Drawing.Graphics]::FromImage($croppedImage)
+    $graphics.CompositingMode = [System.Drawing.Drawing2D.CompositingMode]::SourceCopy
+
+    # Draw the cropped portion of the original image onto the new bitmap.
+    $graphics.DrawImage($image, 8, 0, (new-object System.Drawing.Rectangle(8, 0, 16, 8)), [System.Drawing.GraphicsUnit]::Pixel)
+    $graphics.DrawImage($image, 0, 8, (new-object System.Drawing.Rectangle(0, 8, 32, 8)), [System.Drawing.GraphicsUnit]::Pixel)
+    $graphics.Dispose()
+    $image.Dispose()
+
+    # Save the cropped image to the specified output path.
+    $croppedImage.Save($OutputPath, [System.Drawing.Imaging.ImageFormat]::Png)
+
+    # Clean up resources
+    $croppedImage.Dispose()
+
+    # Write-Host "Image successfully cropped and saved to $($OutputPath)"
+  }
+  catch {
+    Write-Error "Error cropping image: $($_.Exception.Message)"
+  }
+}
+
 function BuildItemSet {
   param(
     $ItemName,
     $Ingredient
   )
+  $BedrockIngredient = ""
   $CleanedItemName = ($ItemName).Replace(" ", "_").Replace("(", "").Replace(")", "").ToLower()
-
+  if ($BlockIdDisparity.ContainsKey($Ingredient)) {
+    $BedrockIngredient = $BlockIdDisparity[$Ingredient]
+  }
+  else {
+    $BedrockIngredient = $Ingredient
+  }
   
   ## Resource Pack
   $ItemFileName = "$($CleanedItemName).png"
@@ -79,7 +138,6 @@ function BuildItemSet {
   (Get-Content -Path $AttachableTemplateFile) |
   ForEach-Object { ($_).replace($ReplaceLitFormatVersion, $FormatVersionAttachable).replace($ReplaceLitItemName, $CleanedItemName) } |
   Set-Content -Path "$($OutputRpAttachablesFolder)\$($CleanedItemName).attachable.json"
-  # Set-Content -Path "$($OutputRpAttachablesFolder)\$($CleanedItemName).attachable.json" -Value "{`n  ""format_version"": ""$($FormatVersionAttachable)"",`n  ""minecraft:attachable"": {`n    ""description"": {`n      ""identifier"": ""miniblocks:$($CleanedItemName)"",`n      ""render_controllers"": [""controller.render.armor""],`n      ""materials"": {`n        ""default"": ""entity_alphatest"",`n        ""enchanted"": ""entity_alphatest_glint""`n      },`n      ""textures"": {`n        ""default"": ""textures/entity/attachable/$($CleanedItemName)"",`n        ""enchanted"": ""textures/misc/enchanted_item_glint""`n      },`n      ""geometry"": {`n        ""default"": ""geometry.mini_blocks""`n      }`n    }`n  }`n}"
   
   ## Behavior Pack
   # Blocks
@@ -98,8 +156,6 @@ function BuildItemSet {
   ForEach-Object { ($_).replace($ReplaceLitFormatVersion, $FormatVersionItem).replace($ReplaceLitItemName, $CleanedItemName) } |
   Set-Content -Path "$($OutputBpItemsFolder)\$($CleanedItemName).item.json"
 
-  # Set-Content -Path "$($OutputBpItemsFolder)\$($CleanedItemName).item.json" -Value "{`n  ""format_version"": ""$($FormatVersionItem)"",`n  ""minecraft:item"": {`n    ""description"": {`n      ""identifier"": ""miniblocks:$($CleanedItemName)"",`n      ""menu_category"": {`n        ""category"": ""items""`n      }`n    },`n    ""components"": {`n      ""minecraft:max_stack_size"": 1,`n      ""minecraft:wearable"": {`n        ""slot"": ""slot.armor.head"",`n        ""protection"": 0`n      },`n      ""minecraft:block_placer"": { ""block"": ""miniblocks:$($CleanedItemName)_block"" }`n    }`n  }`n}"
-
   # Loot Tables
   Set-Content -Path "$($OutputBpBlocksLootTableFolder)\$($CleanedItemName).json" -Value "{`n  ""pools"": [{ ""rolls"": 1, ""entries"": [{ ""type"": ""item"", ""name"": ""miniblocks:$($CleanedItemName)_block"" }] }]`n}"
 
@@ -113,11 +169,9 @@ function BuildItemSet {
   Set-Content -Path "$($OutputBpRecipesFolder)\$($CleanedItemName)_block_from_attachable.json"
 
   (Get-Content -Path $RecipeStonecuttingTemplateFile) |
-  ForEach-Object { ($_).replace($ReplaceLitFormatVersion, $FormatVersionRecipe).replace($ReplaceLitItemName, $CleanedItemName).replace($ReplaceLitIngredient, $Ingredient) } |
+  ForEach-Object { ($_).replace($ReplaceLitFormatVersion, $FormatVersionRecipe).replace($ReplaceLitItemName, $CleanedItemName).replace($ReplaceLitIngredient, $BedrockIngredient) } |
   Set-Content -Path "$($OutputBpRecipesFolder)\$($CleanedItemName)_stonecutting.json"
 
-  # $recipeString = "{`n    ""format_version"": ""1.20.10"",`n    ""minecraft:recipe_shapeless"": {`n        ""description"": {`n            ""identifier"": ""miniblocks:$($CleanedItemName)_stonecutting""`n        },`n        ""ingredients"": [`n            {`n                ""item"": ""$($Ingredient)""`n            }`n        ],`n        ""priority"": 0,`n        ""result"": {`n            ""count"": 8,`n            ""item"": ""miniblocks:$($CleanedItemName)""`n        },`n        ""tags"": [`n            ""stonecutter""`n        ]`n    }`n}"
-  # Set-Content -Path "$($OutputBpRecipesFolder)\$($CleanedItemName)_miniblock_stonecutting.json" -Value $recipeString
 }
 
 ## Main Script
@@ -160,8 +214,9 @@ ForEach-Object {
   $TrimmedItemName = $itemName.Trim('`"')
   $CleanedItemName = ($TrimmedItemName).Replace(" ", "_").Replace("(", "").Replace(")", "").ToLower()
   $ItemFileName = "$($CleanedItemName).png"
-  $OutFilePath = "$($OutputRpAttachableTexturesFolder)\$($ItemFileName)" 
+  $OutFilePath = "$($OutputRpBaseTexturesFolder)\$($ItemFileName)" 
   Invoke-WebRequest -Uri $url -Method Get -OutFile $OutFilePath 
+  CleanTexture -InputPath $OutFilePath -OutputPath "$($OutputRpAttachableTexturesFolder)\$($ItemFileName)" 
   BuildItemSet -ItemName $TrimmedItemName -Ingredient $ingredient
 
 }
